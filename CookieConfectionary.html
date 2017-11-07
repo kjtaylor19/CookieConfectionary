@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="CookieConfectionary.css"
+  </head>
+  <body>
+    <script src="cookies.min.js"></script>
+
+    <h1>WELCOME TO THE COOKIE CONFECTIONARY!!</h1>
+      <p>You are welcome to your choice of 3 flavors of cookies...Sugar, Lemon, or Chocolate. Click the button next to the corresponding flavor. One click will correspond to 1 cookie.</p>
+    <button id="Chocolate">Chocolate</button>
+
+
+
+      <script>
+
+      function updateCookie1(){
+
+          var cookieCount = Cookies.get("Chocolate");
+          if(cookieCount === undefined){
+            Cookies.set("Chocolate", 1);
+          } else {
+            cookieCount = parseInt(cookieCount) + 1;
+            Cookies.set("Chocolate", cookieCount);
+          }
+
+          if (cookieCount >= 10){
+            alert ("You Are Greedy - Start Over");
+            return;
+          }
+
+        }
+
+    document.getElementById("Chocolate").addEventListener("click", updateCookie1);
+    </script>
+
+    <br>
+    <button id="Sugar">Sugar</button>
+
+
+      <script>
+
+      function updateCookie1(){
+
+          var cookieCount = Cookies.get("Sugar");
+          if(cookieCount === undefined){
+            Cookies.set("Sugar", 1);
+          } else {
+            cookieCount = parseInt(cookieCount) + 1;
+            Cookies.set("Sugar", cookieCount);
+          }
+
+          if (cookieCount >= 10){
+            alert ("You Are Greedy - Start Over");
+            return;
+          }
+
+        }
+
+    document.getElementById("Sugar").addEventListener("click", updateCookie1);
+    </script>
+
+    <br>
+    <button id="Lemon">Lemon</button>
+
+
+      <script>
+
+      function updateCookie1(){
+
+          var cookieCount = Cookies.get("Lemon");
+          if(cookieCount === undefined){
+            Cookies.set("Lemon", 1);
+          } else {
+            cookieCount = parseInt(cookieCount) + 1;
+            Cookies.set("Lemon", cookieCount);
+          }
+
+          if (cookieCount >= 10){
+            alert ("You Are Greedy - Start Over");
+            return;
+          }
+
+        }
+
+    document.getElementById("Lemon").addEventListener("click", updateCookie1);
+    </script>
+
+    <br>
+    <br>
+    <button id="CookieReset">Reset</button>
+    <script>
+        function clearCookies(){
+          Cookies.set("Chocolate", 0);
+          Cookies.set("Sugar", 0);
+          Cookies.set("Lemon", 0);
+        }
+      document.getElementById("CookieReset").addEventListener("click", clearCookies);
+    </script>
+
+
+
+  </body>
+</html>
